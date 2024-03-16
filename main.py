@@ -18,7 +18,7 @@ PLAYER_VELOCITY = 6
 COIN_STARTING_VELOCITY = 9
 COIN_ACCELERATION = 0.5
 BUFFER_DISTANCE = 100
-POINTS_TO_WIN = 50
+POINTS_TO_WIN = 40
 
 score = 0
 player_lives = PLAYER_STARTING_LIVES
@@ -119,6 +119,7 @@ while running:
     if player_lives <= 0:
         display_surface.blit(game_over_text, game_over_rect)
         display_surface.blit(continue_text, continue_rect)
+        score_text = font.render("Score : " + str(score), True, GREEN, DARKGREEN)
         pygame.display.update()
 
         # pause the game until player pressed key
